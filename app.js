@@ -23,19 +23,25 @@ function convertToWord(letter) {
 function win(user, computer){
     userScore++;
     userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore; 
-    result_div.innerHTML = convertToWord(user) + " beats " + convertToWord(computer) + ". You Win! 🔥"
-    console.log(user, computer);
-    console.log("WIN");
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${convertToWord(user)}${smallUserWord} beats ${convertToWord(computer)}${smallCompWord}. You Win! 🔥`;
 }
 
 function lose(user, computer){
     computerScore++;
-    console.log("WIN");
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${convertToWord(user)}${smallUserWord} losses to ${convertToWord(computer)}${smallCompWord}. You Lost 💩`;
 }
 
 function draw(user, computer){
-    console.log("WIN");
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${convertToWord(user)}${smallUserWord} equals ${convertToWord(computer)}${smallCompWord}. It's a Draw`;
 }
 
 
